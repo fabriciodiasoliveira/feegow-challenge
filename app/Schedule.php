@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class professional extends Model
+class Schedule extends Model
 {
     //
-    protected $table = "professional";
-    protected $fillable = ['name', 'crm', 'specialties_id',];
-    public function getAllProfessionals()
+    protected $table = "shedule";
+    protected $fillable = ['consultation', 'professional_id'];
+    public function getAllSchedules()
     {
         return Fornecedor::query()->select('*')->get();
     }

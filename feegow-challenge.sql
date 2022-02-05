@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS `professional` (
   `id` INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NULL,
   `crm` VARCHAR(20) NULL,
-  `specialties_id` INT UNSIGNED NOT NULL,
+  `specialtie_id` INT UNSIGNED NOT NULL,
     FOREIGN KEY (`specialties_id`)
     REFERENCES `specialties` (`id`)
     ON DELETE RESTRICT
@@ -17,6 +17,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `schedule` (
   `id` INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `consultation` DATETIME NULL,
+  `how_known` VARCHAR(255),
   `professional_id` INT UNSIGNED NULL,
     FOREIGN KEY (`professional_id`)
     REFERENCES `professional` (`id`)

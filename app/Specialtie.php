@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class specialtie extends Model
+class Specialtie extends Model
 {
     //
     protected $table = "specialtie";
-    protected $fillable = ['nome', 'descricao', 'telefone', 'endereco', 'foto', 'miniatura'];
+    protected $fillable = ['name',];
     public function getAllspecialties()
     {
         return Fornecedor::query()->select('*')->get();
