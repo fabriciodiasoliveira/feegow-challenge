@@ -11,7 +11,7 @@ class Schedule extends Model
 {
     //
     protected $table = "shedule";
-    protected $fillable = ['consultation', 'professional_id'];
+    protected $fillable = ['consultation', 'professional_id', 'how_known'];
     public function getAllSchedules()
     {
         return Fornecedor::query()->select('*')->get();

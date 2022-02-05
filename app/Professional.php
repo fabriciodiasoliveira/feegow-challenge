@@ -12,23 +12,24 @@ class Professional extends Model
     //
     protected $table = "professional";
     protected $fillable = ['name', 'crm', 'specialtie_id',];
-    public function getAllProfessionals()
+    public function getAllProfessionals($specialtie_id)
     {
-        return Fornecedor::query()->select('*')->get();
+        return Professional::query()->select('*')
+                ->where('specialtie_id','=',$specialtie_id)->get();
     }
     public function remove($id){
-        Fornecedor::destroy($id);
+        Professional::destroy($id);
     }
     public function store(array $options = [])
     {
-        return Fornecedor::query()->insertGetId($options);
+        return Professional::query()->insertGetId($options);
     }
-    public function getFornecedor($id)
+    public function getProfessional($id)
     {
         return $this->find($id);
     }
     public function updateSemModel($id, Array $options)
     {
-        Fornecedor::query()->where('id', '=', $id)->update($options);
+        Professional::query()->where('id', '=', $id)->update($options);
     }
 }

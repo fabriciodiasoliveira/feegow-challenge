@@ -14,21 +14,21 @@ class Specialtie extends Model
     protected $fillable = ['name',];
     public function getAllspecialties()
     {
-        return Fornecedor::query()->select('*')->get();
+        return Specialtie::query()->select('*')->get();
     }
     public function remove($id){
-        Fornecedor::destroy($id);
+        Specialtie::destroy($id);
     }
     public function store(array $options = [])
     {
-        return Fornecedor::query()->insertGetId($options);
+        return Specialtie::query()->insertGetId($options);
     }
-    public function getFornecedor($id)
+    public function getSpecialtie($id)
     {
         return $this->find($id);
     }
     public function updateSemModel($id, Array $options)
     {
-        Fornecedor::query()->where('id', '=', $id)->update($options);
+        Specialtie::query()->where('id', '=', $id)->update($options);
     }
 }
