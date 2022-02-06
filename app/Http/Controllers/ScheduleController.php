@@ -13,6 +13,7 @@ class ScheduleController extends Controller {
     private $model_schedule;
     private $model_professional;
     private $model_patient;
+    private $id;
 
     function __construct() {
         $this->model_schedule = new Schedule();
@@ -20,11 +21,11 @@ class ScheduleController extends Controller {
         $this->model_patient = new Patient();
     }
 
-    public function setDataSchedule($request, $id) {
+    public function setDataSchedule($request) {
         $data = [
             'consultation' => $request['consultation'],
             'professional_id' => $request['professional_id'],
-            'patient_id' => $id,
+            'patient_id' => $this->id,
         ];
         return $data;
     }
@@ -49,10 +50,8 @@ class ScheduleController extends Controller {
     }
 
     public function store(Request $request) {
-        dd($request);
-        $id = $this->model_patient->store($this->setDataPatient($request));
-        $this->model_schedule->store($this->setDataSchedule($request), $id);
-        dd($this->setDataPatient($request), $this->setDataSchedule($request));
+        $this->id = $this->model_patient->store($this->setDataPatient($request));
+        $this->model_schedule->store($this->setDataSchedule($request));
     }
 
     public function show($id) {

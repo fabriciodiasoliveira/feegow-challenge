@@ -53,7 +53,6 @@ function init_schedule(id){
                 $('#message').html(response);
                 $('#consultation').val(datetime);
                 $("#button").attr("onclick", "mark_consult()");
-                
             },
             error: () => {
                 console.log('Deu erro')

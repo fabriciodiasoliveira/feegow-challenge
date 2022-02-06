@@ -10,25 +10,25 @@ use Illuminate\Support\Facades\DB;
 class Schedule extends Model
 {
     //
-    protected $table = "shedule";
+    protected $table = "schedule";
     protected $fillable = ['consultation', 'professional_id', 'patient_id',];
     public function getAllSchedules()
     {
-        return Fornecedor::query()->select('*')->get();
+        return Schedule::query()->select('*')->get();
     }
     public function remove($id){
-        Fornecedor::destroy($id);
+        Schedule::destroy($id);
     }
     public function store(array $options = [])
     {
-        return Fornecedor::query()->insertGetId($options);
+        return Schedule::query()->insertGetId($options);
     }
-    public function getFornecedor($id)
+    public function getSchedule($id)
     {
         return $this->find($id);
     }
     public function updateSemModel($id, Array $options)
     {
-        Fornecedor::query()->where('id', '=', $id)->update($options);
+        Schedule::query()->where('id', '=', $id)->update($options);
     }
 }

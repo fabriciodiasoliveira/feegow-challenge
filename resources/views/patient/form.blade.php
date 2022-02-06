@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12">
+        <div id="select" class="col-md-12">
             <label for="how_known" class="col-md-4 col-form-label">Como nos conheceu:</label>
             <select id="how_known" name="how_known" class="form-control">
                 <option>Um colega informou</option>
