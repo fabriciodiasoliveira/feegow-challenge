@@ -5,7 +5,7 @@
  */
 function search_professionals(){
     $.ajax({
-        url: 'http://localhost:8000/professional/'+$('#specialtie').val(),
+        url: '/professionals/'+$('#specialtie').val(),
         method: 'get',
 
         success: (response) => {
@@ -20,6 +20,33 @@ function search_professionals(){
     })
 }
 function form_schedule(id){
+    $.ajax({
+        url: '/form_schedule/'+id,
+        method: 'get',
+
+        success: (response) => {
+            $('#schedule').html(response);
+        },
+        error: () => {
+            console.log('Deu erro')
+        },
+        complete: () => {
+            console.log('Executado depois de erro/sucesso')
+        }
+    })
+}
+function init_schedule(id){
+    date = $('#date').val();
+    time = $('#time').val();
+    if(date == ''){
+        $('#message').html("Escolha uma data");
+    }else if(time == ''){
+        $('#message').html("Escolha um horário");
+    }else{
+        $('#button').html("Salvar");
+    }
+}
+function mark_consult(datetime){
     
 }
 /*function search_specialties() {

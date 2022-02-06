@@ -12,7 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', 'HomeController@index')->name('welcome');
-Route::get('/professional/{id}', 'ProfessionalController@index')->name('professional.index');
+Route::get('/professionals/{id}', 'ProfessionalController@index')->name('professionals.index');
+Route::get('/form_schedule/{id}', 'ScheduleController@form')->name('schedule.form');
+
 Auth::routes();
