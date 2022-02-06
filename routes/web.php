@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'HomeController@index')->name('welcome');
 Route::get('/professionals/{id}', 'ProfessionalController@index')->name('professionals.index');
 Route::get('/form_schedule/{id}', 'ScheduleController@form')->name('schedule.form');
-Route::post('/patient/store', 'PatientController@form')->name('patient.store');
-Route::post('/schedule/store', 'ScheduleController@form')->name('schedule.store');
+Route::get('/form_patient/{id}', 'PatientController@form')->name('patient.form');
+Route::post('/patient/store', 'PatientController@store')->name('patient.store');
+Route::post('/schedule/store', 'ScheduleController@store')->name('schedule.store');
 
 Auth::routes();

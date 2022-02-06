@@ -6,7 +6,7 @@
     </div>
     <div class="row">
         <div class="col-md-3">
-            <label for="date" class="col-md-4 col-form-label text-md-right">Marque uma data:</label>
+            <label for="date" class="col-form-label text-md-right">Marque uma data:</label>
         </div>
         <div class="col-md-9">
             <input id="professional_id" type="hidden" name="professional_id" value="{{ $professional->id }}"/>
@@ -15,7 +15,7 @@
     </div>
     <div class="row">
         <div class="col-md-3">
-            <label for="time" class="col-md-4 col-form-label text-md-right">Marque um horário:</label>
+            <label for="time" class="col-form-label text-md-right">Marque um horário:</label>
         </div>
         <div class="col-md-9">
             <input id="time" class="form-control" type="time" name="time">

@@ -38,6 +38,7 @@ function form_schedule(id){
 function init_schedule(id){
     date = $('#date').val();
     time = $('#time').val();
+    datetime = date+' '+time+':00';
     if(date == ''){
         $('#message').html("Escolha uma data");
     }else if(time == ''){
@@ -45,11 +46,14 @@ function init_schedule(id){
     }else{
         $('#button').html("Salvar");
         $.ajax({
-            url: '/form_schedule/'+id,
+            url: '/form_patient/'+id,
             method: 'get',
 
             success: (response) => {
-                $('#schedule').html(response);
+                $('#message').html(response);
+                $('#consultation').val(datetime);
+                $("#button").attr("onclick", "mark_consult()");
+                
             },
             error: () => {
                 console.log('Deu erro')
@@ -58,10 +62,20 @@ function init_schedule(id){
                 console.log('Executado depois de erro/sucesso')
             }
         })
+        
     }
 }
 function mark_consult(datetime){
-    
+        var url = '/schedule/store';
+        var form = new FormData(document.getElementById('form_schedule'));
+        fetch(url, {
+        method: "POST",
+                body: form
+        }).then(function (data) {
+        console.log('Request success: ', data);
+        }).catch(function (error) {
+        console.log('Request failure: ', error);
+        });
 }
 /*function search_specialties() {
     $.ajax({
