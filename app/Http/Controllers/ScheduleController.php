@@ -21,7 +21,7 @@ class ScheduleController extends Controller {
         $data = [
             'consultation' => $request['consultation'],
             'professional_id' => $request['professional_id'],
-            'how_known' => $request['how_known'],
+            'patient_id' => $request['patient_id'],
         ];
         return $data;
     }

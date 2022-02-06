@@ -44,6 +44,20 @@ function init_schedule(id){
         $('#message').html("Escolha um horário");
     }else{
         $('#button').html("Salvar");
+        $.ajax({
+            url: '/form_schedule/'+id,
+            method: 'get',
+
+            success: (response) => {
+                $('#schedule').html(response);
+            },
+            error: () => {
+                console.log('Deu erro')
+            },
+            complete: () => {
+                console.log('Executado depois de erro/sucesso')
+            }
+        })
     }
 }
 function mark_consult(datetime){
