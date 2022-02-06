@@ -14,8 +14,10 @@ class Professional extends Model
     protected $fillable = ['name', 'crm', 'specialtie_id',];
     public function getAllProfessionals($specialtie_id)
     {
-        return Professional::query()->select('*')
-                ->where('specialtie_id','=',$specialtie_id)->get();
+        return Professional::query()
+                ->select('*')
+                ->where('specialtie_id','=',$specialtie_id)
+                ->get();
     }
     public function remove($id){
         Professional::destroy($id);
