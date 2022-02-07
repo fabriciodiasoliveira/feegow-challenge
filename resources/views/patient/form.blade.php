@@ -2,7 +2,7 @@
     @csrf
     <div class="row">
         <div class="col-md-12">
-            Informe os dados do atendimento
+            Informe os dados do paciente
         </div>
     </div>
     <div class="row">

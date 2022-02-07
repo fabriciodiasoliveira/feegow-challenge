@@ -41,8 +41,10 @@ function init_schedule(id){
     datetime = date+' '+time+':00';
     if(date == ''){
         $('#message').html("Escolha uma data");
+        $('#modal_title').html("Data inexistente");
     }else if(time == ''){
         $('#message').html("Escolha um horário");
+        $('#modal_title').html("Horário inexistente");
     }else{
         $('#button').html("Salvar");
         $.ajax({
@@ -51,6 +53,7 @@ function init_schedule(id){
 
             success: (response) => {
                 $('#message').html(response);
+                $('#modal_title').html("Marque a consulta");
                 $('#consultation').val(datetime);
                 $("#button").attr("onclick", "mark_consult()");
                 
