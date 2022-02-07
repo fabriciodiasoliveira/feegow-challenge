@@ -36,7 +36,6 @@
                 <option>Achou pelo plano de saúde</option>
                 <option>Foi uma emergência</option>
             </select>
-            <input type="submit" value="submeter"/>
         </div>
     </div>
 </form>
