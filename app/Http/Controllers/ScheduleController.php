@@ -58,9 +58,9 @@ class ScheduleController extends Controller {
         $patient_name = '';
         $consultation = '';
         if($result_test == "Falso"){
+            $this->id = $this->model_patient->store($patient);
             $schedule = $this->setDataSchedule($request);
             $consultation = $schedule['consultation'];
-            $this->id = $this->model_patient->store($patient);
             $patient_name = $this->model_patient->getPatient($this->id)['name'];
             $professional = $this->model_professional->getProfessional($request['professional_id'])['name'];
             $this->model_schedule->store($schedule);
