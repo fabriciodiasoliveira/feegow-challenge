@@ -15,7 +15,23 @@
         <div id="app">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h1 class="animate__animated animate__pulse animate__infinite infinite">Feegow-challenger</h1>
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <h1 class="animate__animated animate__pulse animate__infinite infinite">Feegow-challenger</h1>
+                            </div>
+                            <div class="carousel-item">
+                                <h1 class="animate__animated animate__pulse animate__infinite infinite">Usei esse teste para aprender um pouco mais de JQuery</h1>
+                            </div>
+                            <div class="carousel-item">
+                                <h1 class="animate__animated animate__pulse animate__infinite infinite">Ainda sim não aprendi o que eu queria. Mas chegarei lá.</h1>
+                            </div>
+                            <div class="carousel-item">
+                                <h1 class="animate__animated animate__pulse animate__infinite infinite">PS: Não consegui acessar a API, usei dados inventados.</h1>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
                 <div class="col-md-12">
                     @yield('content')
