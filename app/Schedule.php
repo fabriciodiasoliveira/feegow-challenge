@@ -25,7 +25,7 @@ class Schedule extends Model
     }
     public function getSchedule($id)
     {
-        return $this->find($id);
+        return Schedule::query()->select('*', DB::raw('DATE_FORMAT(consultation, "%d/%m/%Y às %H:%i") as formated_time'))->where('id','=',$id)->first();
     }
     public function updateSemModel($id, Array $options)
     {

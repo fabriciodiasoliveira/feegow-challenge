@@ -60,10 +60,11 @@ class ScheduleController extends Controller {
         if($result_test == "Falso"){
             $this->id = $this->model_patient->store($patient);
             $schedule = $this->setDataSchedule($request);
-            $consultation = $schedule['consultation'];
             $patient_name = $this->model_patient->getPatient($this->id)['name'];
             $professional = $this->model_professional->getProfessional($request['professional_id'])['name'];
-            $this->model_schedule->store($schedule);
+            $id_schedule = $this->model_schedule->store($schedule);
+            $schedule = $this->model_schedule->getSchedule($id_schedule);
+            $consultation = $schedule['formated_time'];
         }
         return view("schedule.message", compact('professional', 'patient_name', 'consultation', 'result_test'));
     }
