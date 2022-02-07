@@ -31,7 +31,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `patient` (
   `id` INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NULL,
-  `cpf` VARCHAR(255) NULL,
+  `cpf` VARCHAR(255) UNIQUE NULL,
   `birth` DATE,
   `how_known` VARCHAR(255))
 ENGINE = InnoDB;
@@ -45,14 +45,14 @@ INSERT INTO specialtie (id, name) VALUES
 (6, 'Pediatria');
 
 INSERT INTO professional (name, crm, specialtie_id) VALUES
-("Ryu", "CRM 66648", 1),
-("Ken", "CRM 17170", 1),
-("Sonya Blade", "CRM 95623", 2),
-("Liu Kang", "CRM 48666", 2),
-("Kano", "CRM 26262", 3),
-("Mustapha", "CRM 58456", 3),
-("Hanna", "CRM 59813", 4),
-("Drognan", "CRM 99966", 4),
-("Cain", "CRM 55661", 5),
-("Jaina Proudmore", "CRM 99511", 5),
-("Sarah Kerrigan", "CRM 70171", 6);
+("César Lattes", "CRM 66648", 1),
+("Oswaldo Cruz", "CRM 17170", 1),
+("Carlos Chagas", "CRM 95623", 2),
+("Duilia de Mello", "CRM 48666", 2),
+("José Leite Lopes", "CRM 26262", 3),
+("Monteiro Lobato", "CRM 58456", 3),
+("Cecília Meireles", "CRM 59813", 4),
+("Cora Coralina", "CRM 99966", 4),
+("Carolina de Jesus", "CRM 55661", 5),
+("Lygia Fagundes Telles", "CRM 99511", 5),
+("Ana Miranda", "CRM 70171", 6);
