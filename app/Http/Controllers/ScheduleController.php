@@ -14,6 +14,7 @@ class ScheduleController extends Controller {
     private $model_professional;
     private $model_patient;
     private $id;
+    private $result_test = "Falso";
 
     function __construct() {
         $this->model_schedule = new Schedule();
@@ -50,8 +51,34 @@ class ScheduleController extends Controller {
     }
 
     public function store(Request $request) {
-        $this->id = $this->model_patient->store($this->setDataPatient($request));
-        $this->model_schedule->store($this->setDataSchedule($request));
+        $patient = $this->setDataPatient($request);
+        $this->test($patient);
+        $result_test = $this->result_test;
+        $professional = '';
+        $patient_name = '';
+        $consultation = '';
+        if($result_test == "Falso"){
+            $schedule = $this->setDataSchedule($request);
+            $consultation = $schedule['consultation'];
+            $this->id = $this->model_patient->store($patient);
+            $patient_name = $this->model_patient->getPatient($this->id)['name'];
+            $professional = $this->model_professional->getProfessional($request['professional_id'])['name'];
+            $this->model_schedule->store($schedule);
+        }
+        return view("schedule.message", compact('professional', 'patient_name', 'consultation', 'result_test'));
+    }
+    public function test($patient){
+        if($patient['name']==''){
+            $this->result_test = "Preencha o nome do paciente";
+        }elseif ($patient['cpf']=='') {
+            $this->result_test = "Preencha o cpf do paciente";
+        }elseif ($patient['birth']=='') {
+            $this->result_test = "Selecione uma data de nascimento";
+        }else if($patient['how_known']=="Selecione uma opção"){
+            $this->result_test = "Responda como o paciente conheceu a clínica";
+        }else{
+            return true;
+        }
     }
 
     public function show($id) {

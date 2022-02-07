@@ -29,12 +29,14 @@
         <div id="select" class="col-md-12">
             <label for="how_known" class="col-md-4 col-form-label">Como nos conheceu:</label>
             <select id="how_known" name="how_known" class="form-control">
+                <option>Selecione uma opção</option>
                 <option>Um colega informou</option>
                 <option>Internet</option>
                 <option>Um dos médicos informou</option>
                 <option>Achou pelo plano de saúde</option>
                 <option>Foi uma emergência</option>
             </select>
+            <input type="submit" value="submeter"/>
         </div>
     </div>
 </form>

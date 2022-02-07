@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="row">
+    <div id="alert" class="col-md-12">
+        
+    </div>
+</div>
 
 <div class="row">
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

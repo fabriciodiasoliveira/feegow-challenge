@@ -1,5 +1,4 @@
-
-<div class="row">
+<div class="row animate__animated animate__backInRight">
     @foreach($professionals as $professional)
     <div class="col-md-6">
         {{ $professional->name }}

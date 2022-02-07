@@ -53,6 +53,7 @@ function init_schedule(id){
                 $('#message').html(response);
                 $('#consultation').val(datetime);
                 $("#button").attr("onclick", "mark_consult()");
+                
             },
             error: () => {
                 console.log('Deu erro')
@@ -65,17 +66,31 @@ function init_schedule(id){
     }
 }
 function mark_consult(datetime){
-        var url = '/schedule/store';
-        var form = new FormData(document.getElementById('form_schedule'));
-        fetch(url, {
-        method: "POST",
-                body: form
-        }).then(function (data) {
-        console.log('Request success: ', data);
-        }).catch(function (error) {
-        console.log('Request failure: ', error);
+    var url = '/schedule/store';
+    var formData = new FormData(document.getElementById('form_schedule'));
+    fetch(url, {
+    method: "POST",
+            body: formData
+    }).then(function (data) {
+
+        data.text()
+                .then(function (result) {
+                    //window.location.href = "{{ route('jogo.fichas.concluir', ['id' => $fichaUser->id]) }}";
+                    $('#alert').html(result);
+                    $('#professionals').html('');
+                    $('#schedule').html('');
+                    setTimeout(remove_alert, 5000);
+                });
+//            $('#alert').html(data);
+    console.log('Request success: ', data);
+    }).catch(function (error) {
+    console.log('Request failure: ', error);
         });
 }
+function remove_alert(){
+   $("#alert").html('');
+}
+
 /*function search_specialties() {
     $.ajax({
         x-access-token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJmZWVnb3ciLCJhdWQiOiJwdWJsaWNhcGkiLCJpYXQiOiIxNy0wOC0yMDE4IiwibGljZW5zZUlEIjoiMTA1In0.UnUQPWYchqzASfDpVUVyQY0BBW50tSQQfVilVuvFG38"
