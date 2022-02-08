@@ -48,6 +48,11 @@
     </div>
     <div class="row">
         <div class="col-md-12">
+            <h2>DER</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
             <img src="feegow-challenger.png"/>
         </div>
     </div>
