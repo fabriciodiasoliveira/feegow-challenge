@@ -14,7 +14,11 @@ class Schedule extends Model
     protected $fillable = ['consultation', 'professional_id', 'patient_id',];
     public function getAllSchedules()
     {
-        return Schedule::query()->select('*')->get();
+        return DB::connection('mysql')->table('schedule as sc')
+               ->join('profession as pr', 'pr.id', '=', 'sc.profession_id')
+                ->join('patient as pa', 'pa.id', '=', 'sc.patient_id')
+               ->select('pa.name as patient','pr.name as professional', DB::raw('DATE_FORMAT(consultation, "%d/%m/%Y às %H:%i") as formated_time'))
+                ->orderBy('sc.consultation')->get();
     }
     public function remove($id){
         Schedule::destroy($id);

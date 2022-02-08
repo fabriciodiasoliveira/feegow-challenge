@@ -81,7 +81,6 @@ class ScheduleController extends Controller {
             return true;
         }
     }
-
     public function show($id) {
         $schedule = $this->model_schedule->getSchedule($id);
         return view('schedule.show', compact('schedule'));

@@ -94,20 +94,20 @@ function remove_alert(){
    $("#alert").html('');
 }
 
-/*function search_specialties() {
-    $.ajax({
-        x-access-token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJmZWVnb3ciLCJhdWQiOiJwdWJsaWNhcGkiLCJpYXQiOiIxNy0wOC0yMDE4IiwibGljZW5zZUlEIjoiMTA1In0.UnUQPWYchqzASfDpVUVyQY0BBW50tSQQfVilVuvFG38"
-        url: 'https://api.feegow.com/v1/api/company/list-unity',
-        method: 'get',
-
-        success: (response) => {
-            alert(response);
-        },
-        error: () => {
-            console.log('Deu erro')
-        },
-        complete: () => {
-            console.log('Executado depois de erro/sucesso')
-        }
-    })
-}*/
+//function search_specialties() {
+//    $.ajax({
+//        headers: {x-access-token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJmZWVnb3ciLCJhdWQiOiJwdWJsaWNhcGkiLCJpYXQiOjE2NDQyNDAzODQsImxpY2Vuc2VJRCI6IjEwNSJ9._v3HJr5GUYAc14WW6HDxM5BlxAl-1KJeaqq2OfG67sM"},
+//        url: 'https://api.feegow.com/v1/api/company/list-unity',
+//        method: 'get',
+//
+//        success: (response) => {
+//            alert(response);
+//        },
+//        error: () => {
+//            console.log('Deu erro');
+//        },
+//        complete: () => {
+//            console.log('Executado depois de erro/sucesso');
+//        }
+//    })
+//}

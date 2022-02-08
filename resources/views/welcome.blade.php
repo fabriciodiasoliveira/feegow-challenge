@@ -3,10 +3,9 @@
 @section('content')
 <div class="row">
     <div id="alert" class="col-md-12">
-        
+
     </div>
 </div>
-
 <div class="row">
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
@@ -61,7 +60,10 @@
     </div>
 </div>
 <div class="row">
-    <div id="schedule" class="col-md-12">
+    <div id="schedule" class="col-md-6">
+
+    </div>
+    <div id="marcations" class="col-md-6">
 
     </div>
 </div>
