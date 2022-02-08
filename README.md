@@ -24,7 +24,7 @@
                     <br>DB_DATABASE
                     <br>DB_USERNAME
                     <br>DB_PASSWORD</li>
-                <li>E finalmente digite:
+                <li>E novamente na linha de comando, finalmente digite:
                     <br>php artisan serve;</li>
                 <li>Acesse de um navegador qualquer o endereço:
                     <br>http://localhost:8000</li>
