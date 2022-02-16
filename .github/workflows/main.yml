@@ -33,8 +33,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo test, and deploy your project.
-          git config git-ftp.url ${{ env.SERVER }}/loja
-          echo ${{ env.SERVER }}/loja
+          git config git-ftp.url ${{ env.SERVER }}/feegow
           git config git-ftp.user ${{ env.FTP_USER }}
           git config git-ftp.password ${{ env.FTP_PASSWORD }}
           git ftp init
