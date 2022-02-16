@@ -33,10 +33,5 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo test, and deploy your project.
-          git config git-ftp.url ${{ env.SERVER }}/feegow
-          echo git-ftp
-          git config git-ftp.user ${{ env.FTP_USER }}
-          ftp.user
-          git config git-ftp.password ${{ env.FTP_PASSWORD }}
-          ftp.password
-          git ftp init
+          $ git ftp init -u "${{ env.SERVER }}" -P "${{ env.FTP_PASSWORD }}" "${{ env.SERVER }}/feegow"
+          echo funcionou.
