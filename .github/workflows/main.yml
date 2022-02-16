@@ -33,5 +33,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo test, and deploy your project.
+          apt update
+          apt install git git-ftp
           $ git ftp init -u "${{ env.SERVER }}" -P "${{ env.FTP_PASSWORD }}" "${{ env.SERVER }}/feegow"
           echo funcionou.
